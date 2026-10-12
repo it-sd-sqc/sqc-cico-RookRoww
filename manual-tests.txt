@@ -71,3 +71,14 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## expected results
 * values outside of the number values 0-9 should not appear
 * values that are longer than 8 digits long should not appear
+
+
+Test: Auto-submit on full card entry and remove button (Ticket 601)
+Description: Verifies that entering the full card number triggers auto-submit without pressing Enter or using a button.
+Steps:
+1. Run ./run.sh to start the application.
+2. Confirm no Submit button is visible on the interface.
+3. Enter a valid card number digit-by-digit into the text field.
+Expected Result:
+- The UI contains no Submit button.
+- Entering the final required digit processes the card without manual submission.

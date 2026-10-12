@@ -69,6 +69,9 @@ public class Main {
     {
       if (isValidInput(fb, offset, 0, stringToAdd)) {
         super.insertString(fb, offset, stringToAdd, attr);
+        if (fb.getDocument().getLength() == MAX_LENGTH) {
+          Main.processCard();
+        }
       }
       else {
         Toolkit.getDefaultToolkit().beep();
@@ -81,6 +84,9 @@ public class Main {
     {
       if (isValidInput(fb, offset, lengthToDelete, stringToAdd)) {
         super.replace(fb, offset, lengthToDelete, stringToAdd, attr);
+        if (fb.getDocument().getLength() == MAX_LENGTH) {
+          Main.processCard();
+        }
       }
       else {
         Toolkit.getDefaultToolkit().beep();
@@ -287,11 +293,11 @@ public class Main {
     fieldNumber.setForeground(Color.magenta);
     panelMain.add(fieldNumber);
 
-    JButton updateButton = new JButton("Update");
-    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    updateButton.addActionListener(new Update());
-    updateButton.setForeground(Color.green);
-    panelMain.add(updateButton);
+//    JButton updateButton = new JButton("Update");
+//    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+//    updateButton.addActionListener(new Update());
+//    updateButton.setForeground(Color.green);
+//    panelMain.add(updateButton);
 
     panelMain.add(Box.createVerticalGlue());
 
